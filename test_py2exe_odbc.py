@@ -66,5 +66,8 @@ customer.columns
 df=customer[['CustomerID', 'SalesOrderID', 'Name', 'LineTotal', 'OrderQty']].sort_values(by='CustomerID')
 df=df.sort_values(by='OrderQty', ascending=False).groupby('CustomerID').head(3)
 print(df.head(25))
+
+df.to_csv('output.csv')
+
 # cursor.close()
 conn.close()
